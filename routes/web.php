@@ -18,6 +18,8 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/categories', [App\Http\Controllers\CategoryController::class, 'index'])->name('categories.index');
+Route::post('/categories', [App\Http\Controllers\CategoryController::class, 'store'])->name('savecategory');
+
 Route::get('/categorytypes', [App\Http\Controllers\CategoryTypeController::class, 'index'])->name('categorytypes.index');
 Route::get('/currencies', [App\Http\Controllers\CurrencyController::class, 'index'])->name('currencies.index');
 Route::get('/wallets', [App\Http\Controllers\WalletController::class, 'index'])->name('wallets.index');
