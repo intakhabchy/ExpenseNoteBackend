@@ -18,11 +18,14 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/categories', [App\Http\Controllers\CategoryController::class, 'index'])->name('categories.index');
-Route::post('/categories', [App\Http\Controllers\CategoryController::class, 'store'])->name('savecategory');
+Route::post('/categories', [App\Http\Controllers\CategoryController::class, 'store'])->name('categories.store');
 
 Route::get('/categorytypes', [App\Http\Controllers\CategoryTypeController::class, 'index'])->name('categorytypes.index');
 Route::get('/currencies', [App\Http\Controllers\CurrencyController::class, 'index'])->name('currencies.index');
+
 Route::get('/wallets', [App\Http\Controllers\WalletController::class, 'index'])->name('wallets.index');
+Route::post('/wallets', [App\Http\Controllers\WalletController::class, 'store'])->name('wallets.store');
+
 Route::get('/costs', [App\Http\Controllers\CostController::class, 'index'])->name('costs.index');
 
 require __DIR__.'/auth.php';
