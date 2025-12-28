@@ -28,5 +28,6 @@ Route::post('/wallets', [App\Http\Controllers\WalletController::class, 'store'])
 Route::get('/walletByUser/{user_id}', [App\Http\Controllers\WalletController::class, 'walletByUser'])->name('walletByUser');
 
 Route::get('/costs', [App\Http\Controllers\CostController::class, 'index'])->name('costs.index');
+Route::post('/costs', [App\Http\Controllers\CostController::class, 'store'])->name('costs.store');
 
 require __DIR__.'/auth.php';

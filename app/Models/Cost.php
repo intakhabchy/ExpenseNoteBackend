@@ -26,4 +26,13 @@ class Cost extends Model
     {
         return $this->belongsTo(Category::class);
     }
+
+    public static function calculateBalance($walletId)
+    {
+        $lastCost = self::where('wallet_id', $walletId)
+                        ->orderBy('id', 'desc')
+                        ->first();
+
+        return $lastCost ? $lastCost->balance : 0;
+    }
 }
