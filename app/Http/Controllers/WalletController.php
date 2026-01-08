@@ -18,9 +18,12 @@ class WalletController extends Controller
         $validatedData = $request->validate([
             'wallet_name' => 'required|string|max:255',
             'currency_id' => 'required|exists:currencies,id',
-            'user_id' => 'required|exists:users,id',
-            'created_by' => 'required|exists:users,id',
         ]);
+
+        $userId = $request->user()->id; // get currently authenticated user
+
+        $validatedData['user_id'] = $userId;
+        $validatedData['created_by'] = $userId;
 
         $wallet = Wallet::create($validatedData);
 
