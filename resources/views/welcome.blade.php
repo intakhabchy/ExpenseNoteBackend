@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Expense Tracker</title>
+    <title>Expense Note</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         html, body {
@@ -54,7 +54,7 @@
     <div class="wrapper">
         <!-- Main Content -->
         <div class="content">
-            <h1>Expense Tracker</h1>
+            <h1>Expense Note</h1>
             <p>Keep track of your expenses easily and efficiently.</p>
             <div>
                 <a href="{{ route('login') }}" class="btn btn-primary btn-lg">Login</a>
@@ -64,7 +64,7 @@
 
         <!-- Footer -->
         <footer>
-            &copy; {{ date('Y') }} Expense Tracker. All rights reserved.
+            &copy; {{ date('Y') }} Expense Note. All rights reserved.
         </footer>
     </div>
 </body>
